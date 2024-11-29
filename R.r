@@ -41,9 +41,3 @@ boxplot(valor ~ grupo, data = dados,
         xlab = "Grupo de IDH",
         ylab = "Resultados do PISA",
         col = c("lightblue", "lightgreen", "lightpink"))
-# Gráfico de boxplot scatterplot
-boxplot(valor ~ grupo, data = dados,
-        xlab = "Grupo de IDH",
-        ylab = "Resultados do PISA",
-        main = "Distribuição dos Resultados de Prova por Grupo de IDH",
-        col = c("skyblue", "pink", "lightgreen"))
