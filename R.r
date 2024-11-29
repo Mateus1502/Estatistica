@@ -30,6 +30,7 @@ summary(resultado_anova)
 
 # Realizar o teste de Tukey para comparações múltiplas
 resultado_tukey <- TukeyHSD(resultado_anova)
+plot(resultado_tukey , las = 1)
 
 print("Resultados do teste de Tukey:")
 print(resultado_tukey)
