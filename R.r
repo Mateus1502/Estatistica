@@ -41,3 +41,14 @@ boxplot(valor ~ grupo, data = dados,
         xlab = "Grupo de IDH",
         ylab = "Resultados do PISA",
         col = c("lightblue", "lightgreen", "lightpink"))
+# Gráfico de boxplot (adaptado para os dados fornecidos)
+boxplot(valor ~ grupo, data = dados,
+        xlab = "Grupo de IDH",
+        ylab = "Resultados do PISA",
+        main = "Distribuição dos Resultados de Prova por Grupo de IDH",
+        col = c("skyblue", "pink", "lightgreen"))
+
+# Adicionando jitter aos pontos para visualizar melhor os valores individuais
+stripchart(valor ~ grupo, data = dados,
+           vertical = TRUE, method = "jitter", add = TRUE,
+           pch = 21, col = "black", bg = "white")
