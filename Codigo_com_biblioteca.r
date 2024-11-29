@@ -1,4 +1,5 @@
-
+install.packages("car")
+library("car")
 # Dados
 IDH_alto <- c(494, 506, 504, 489, 498, 523, 491)
 IDH_medio <- c(401, 397, 402, 396, 407, 367, 376)
@@ -15,7 +16,9 @@ shapiro_result <- by(dados$valor, dados$grupo, shapiro.test)
 print("Resultados do Teste de Shapiro-Wilk:")
 print(shapiro_result)
 
-# Teste de homogeneidade de variância de Levene (usando a função native)
+# Teste de homogeneidade de variância de Levene
+resultado_levene <- leveneTest(valor - grupo, data = dados)
+print
 # Calcula a variância de cada grupo e compara
 variancia_alto <- var(IDH_alto)
 variancia_medio <- var(IDH_medio)
@@ -29,14 +32,14 @@ resultado_anova <- aov(valor ~ grupo, data = dados)
 print("Resumo da ANOVA:")
 summary(resultado_anova)
 
-# Realizar o teste de Tukey para comparações múltiplas
+# Realizar o teste de Tukey 
 resultado_tukey <- TukeyHSD(resultado_anova)
 plot(resultado_tukey , las = 1)
 
 print("Resultados do teste de Tukey:")
 print(resultado_tukey)
 
-# Gráfico de boxplot (usando funções básicas do R)
+# Gráfico de boxplot
 boxplot(valor ~ grupo, data = dados,
         main = "Distribuição dos Resultados de Prova por Grupo de IDH",
         xlab = "Grupo de IDH",
