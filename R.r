@@ -1,3 +1,4 @@
+
 # Dados
 IDH_alto <- c(494, 506, 504, 489, 498, 523, 491)
 IDH_medio <- c(401, 397, 402, 396, 407, 367, 376)
@@ -41,3 +42,8 @@ boxplot(valor ~ grupo, data = dados,
         xlab = "Grupo de IDH",
         ylab = "Resultados do PISA",
         col = c("lightblue", "lightgreen", "lightpink"))
+par(mfrow = c(1, 3))  # Organizar a área de plotagem em 3 colunas
+hist(IDH_alto, main = "Histograma IDH Alto", xlab = "Resultados do PISA", col = "lightblue")
+hist(IDH_medio, main = "Histograma IDH Médio", xlab = "Resultados do PISA", col = "lightgreen")
+hist(IDH_baixo, main = "Histograma IDH Baixo", xlab = "Resultados do PISA", col = "lightpink")
+par(mfrow = c(1, 1))  # Restaurar a área de plotagem para uma única janela
