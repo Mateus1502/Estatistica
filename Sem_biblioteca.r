@@ -14,9 +14,6 @@ shapiro_result <- by(dados$valor, dados$grupo, shapiro.test)
 print("Resultados do Teste de Shapiro-Wilk:")
 print(shapiro_result)
 
-# Teste de homogeneidade de variância de Levene
-resultado_levene <- leveneTest(valor - grupo, data = dados)
-print
 # Calcula a variância de cada grupo e compara
 variancia_alto <- var(IDH_alto)
 variancia_medio <- var(IDH_medio)
